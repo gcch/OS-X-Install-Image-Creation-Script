@@ -1,4 +1,4 @@
-# OS-X-Installation-Image-Creation-Script
+# OS X Installation Disk Image Creation Script
 
 ## Overview
 For you who prefer a optical installation disk to a USB installation media
@@ -19,8 +19,8 @@ Maybe run with the below packages:
 1. Deploy this script at any folder
 2. Open it and rewrite the variable "nickname" to any OS X nickname such as Mavericks, Yosemite, El Capitan, and so on.
 3. Deploy "Install OS X nickname.app" at the same folder
-4. Grant execute permission (example: chmod +x os-x-inst-img-creation-script.command)
-5. Execute this script (example: ./os-x-inst-img-creation-script.command)
+4. Grant execute permission (example: chmod +x os-x-inst-dsk-img-creation-script.command)
+5. Execute this script (example: ./os-x-inst-dsk-img-creation-script.command)
 
 ## License
 This script is released under the MIT license.
