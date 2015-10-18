@@ -16,3 +16,5 @@ You can make a OS X installation image from an app file which can be got from Ap
 3. Deploy "Install OS X nickname.app" at the same folder
 4. Grant execute permission (example: chmod +x filename)
 5. Execute this script (example: ./filename)
+
+## License
