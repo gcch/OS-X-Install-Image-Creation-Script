@@ -24,3 +24,4 @@ Maybe run with OS X Lion and OS X Mountain Lion.
 This script is released under the MIT license.
 
 ## Author
+tag (Twitter: @tag_ism)
