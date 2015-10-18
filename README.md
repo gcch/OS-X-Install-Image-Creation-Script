@@ -26,4 +26,4 @@ Maybe this script run with the below packages:
 This script is released under the MIT license.
 
 ## Author
-tag (Twitter: @tag_ism)
+* tag (Twitter: @tag_ism)
