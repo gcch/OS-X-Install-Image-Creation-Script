@@ -11,7 +11,7 @@ You can make a OS X installation image from an app file which can be got from Ap
 * Install OS X Yosemite.app
 * Install OS X El Capitan.app
 
-Maybe this script run with the below packages:
+Maybe this script can execute with the below packages:
 * Install Mac OS X Lion.app (customizing this script is required)
 * Install OS X Mountain Lion.app
 
