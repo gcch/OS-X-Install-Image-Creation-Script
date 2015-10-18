@@ -6,7 +6,7 @@ For you who prefer a optical installation disk to a USB installation media
 ## Description
 You can make a OS X installation image from an app file which can be got from App Store.
 
-## Supported Installation Package
+## Supported Installation Packages
 * Install OS X Mavericks.app
 * Install OS X Yosemite.app
 * Install OS X El Capitan.app
