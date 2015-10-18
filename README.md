@@ -21,6 +21,6 @@ Maybe run with OS X Lion and OS X Mountain Lion.
 5. Execute this script (example: ./filename)
 
 ## License
-
+This script is released under the MIT license.
 
 ## Author
