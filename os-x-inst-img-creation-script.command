@@ -90,4 +90,5 @@ echo removing the sparse image
 rm "${work}/${nickname}.sparseimage"
 
 echo ================================================================================
-echo 終了しました
+echo operation is end.
+#echo 終了しました
