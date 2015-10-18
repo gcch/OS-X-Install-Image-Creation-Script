@@ -19,3 +19,6 @@ You can make a OS X installation image from an app file which can be got from Ap
 5. Execute this script (example: ./filename)
 
 ## License
+
+
+## Author
