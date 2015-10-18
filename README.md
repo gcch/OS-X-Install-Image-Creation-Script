@@ -1,7 +1,7 @@
 # OS-X-Installation-Image-Creation-Script
 
 ## Overview
-For you who prefer a optical insallation disk to a USB installation media
+For you who prefer a optical installation disk to a USB installation media
 
 ## Description
 You can make a OS X installation image from an app file which can be got from App Store.
