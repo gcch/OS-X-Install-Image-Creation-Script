@@ -15,7 +15,7 @@
 #
 # ---------------------------------------------------------------------------------------------------- #
 
-# wording dir
+# working directory
 work=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # OS X nickname
