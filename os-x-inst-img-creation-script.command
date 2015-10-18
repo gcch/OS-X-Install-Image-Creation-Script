@@ -9,7 +9,9 @@
 #	3) Grant execute permission (example: chmod +x <filename>)
 #	4) Execute this script (example: ./<filename>)
 #
-# Copyright (C) 2015 tag. All rights reserved.
+# Copyright (c) 2015 tag
+# Released under the MIT license
+# http://opensource.org/licenses/mit-license.php
 #
 # ---------------------------------------------------------------------------------------------------- #
 
