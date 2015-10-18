@@ -1,9 +1,9 @@
 # OS-X-Installation-Image-Creation-Script
 
 ## Overview
-You can make a OS X installation image from an app file which can be got from App Store.
 
 ## Description
+You can make a OS X installation image from an app file which can be got from App Store.
 
 ## Supported Installation Package
 * Install OS X Mavericks.app
