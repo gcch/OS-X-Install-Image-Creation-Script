@@ -17,7 +17,7 @@ Maybe this script can execute with the below packages:
 
 ## Usage
 1. Deploy this script at any folder
-2. Open it and rewrite the variable "nickname" to any OS X nickname such as Mavericks, Yosemite, El Capitan, and so on.
+2. Open it and rewrite the variable which is named "nickname" to any OS X nickname such as Mavericks, Yosemite, El Capitan, and so on.
 3. Deploy "Install OS X nickname.app" at the same folder
 4. Grant execute permission (example: chmod +x os-x-inst-dsk-img-creation-script.command)
 5. Execute this script (example: ./os-x-inst-dsk-img-creation-script.command)
