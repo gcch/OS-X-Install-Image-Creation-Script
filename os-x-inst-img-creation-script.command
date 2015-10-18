@@ -48,7 +48,7 @@ rm "/Volumes/${nickname}/System/Installation/Packages"
 
 echo ================================================================================
 echo copying a folder, Packages, to the sparse image
-echo フォルダ Packages をコピーしています...
+#echo フォルダ Packages をコピーしています...
 cp -rp "/Volumes/OS X Install ESD/Packages" "/Volumes/${nickname}/System/Installation/"
 
 echo ================================================================================
