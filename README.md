@@ -22,7 +22,7 @@ Maybe this script can be executed with the below packages:
 4. Grant execute permission (example: chmod +x os-x-inst-dsk-img-creation-script.command)
 5. Execute this script (example: ./os-x-inst-dsk-img-creation-script.command)
 6. Wait for a while
-7. Generate a installation DMG image (and burn it on a DVD+/-R(RW) DL or BD-R(RE) blank media with Disk Utility)
+7. Generate a installation DMG file (and burn it on a DVD+/-R(RW) DL or BD-R(RE) blank media with Disk Utility)
 
 OS X Terminal:
 
