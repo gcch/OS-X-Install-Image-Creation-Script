@@ -21,6 +21,8 @@ Maybe this script can be executed with the below packages:
 3. Deploy "Install OS X *nickname*.app" at the same folder
 4. Grant execute permission (example: chmod +x os-x-inst-dsk-img-creation-script.command)
 5. Execute this script (example: ./os-x-inst-dsk-img-creation-script.command)
+6. Wait for a while
+7. Generate a installation DMG image (and burn it on a DVD+-R/RW DL or BD-R/RW blank media with Disk Utility)
 
 Terminal sample:
 
