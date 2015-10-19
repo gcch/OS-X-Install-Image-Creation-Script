@@ -74,7 +74,7 @@ echo converting the sparse image to a DMG file
 #echo スパースイメージを DMG ファイルに変換しています...
 hdiutil convert -format UDZO "${work}/${nickname}.sparseimage" -o "${work}/${nickname}.dmg"
 
-# for converting the sparse image to a ISO file
+# for converting the sparse image to a ISO file (for OSx86, Hackintosh)
 # 上の代わりに↓のコマンドを打つと ISO 化できて、夢を見る準備ができるとか。 (コマンドはこんな感じでいいと思うけど、未検証)
 # hdiutil convert -format UDTO "${work}/${nickname}.sparseimage" -o "${work}/${nickname}.cdr"
 # mv "${work}/${nickname}.cdr" "${work}/${nickname}.iso"
