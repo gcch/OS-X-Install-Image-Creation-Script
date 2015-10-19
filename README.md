@@ -24,7 +24,7 @@ Maybe this script can be executed with the below packages:
 6. Wait for a while
 7. Generate a installation DMG image (and burn it on a DVD+-R/RW DL or BD-R/RE blank media with Disk Utility)
 
-Terminal sample:
+OS X Terminal:
 
     $ cd ~/Desktop
     $ git clone https://github.com/gcch/OS-X-Installation-Disk-Image-Creation-Script.git
