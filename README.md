@@ -26,4 +26,4 @@ Maybe this script can be executed with the below packages:
 This script is released under the MIT license. See LICENSE.txt.
 
 ## Author
-* tag (Twitter: [@tag_ism][https://twitter.com/tag_ism ""] / Blog: http://karat5i.blogspot.jp/)
+* tag (Twitter: [@tag_ism](https://twitter.com/tag_ism "tag (@tag_ism) | Twitter") / Blog: http://karat5i.blogspot.jp/)
