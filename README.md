@@ -18,18 +18,20 @@ Maybe this script can be executed with the below packages:
 ## Usage
 1. Deploy this script at any folder
 2. Open it and rewrite the variable which is named *nickname* to any OS X nickname such as Mavericks, Yosemite, El Capitan, and so on.
-3. Deploy "Install OS X nickname.app" at the same folder
+3. Deploy "Install OS X *nickname*.app" at the same folder
 4. Grant execute permission (example: chmod +x os-x-inst-dsk-img-creation-script.command)
 5. Execute this script (example: ./os-x-inst-dsk-img-creation-script.command)
 
 Terminal sample:
-`$ cd ~/Desktop`
-`$ git clone https://github.com/gcch/OS-X-Installation-Disk-Image-Creation-Script.git`
-`$ cd OS-X-Installation-Disk-Image-Creation-Script`
-`$ vim os-x-inst-dsk-img-creation-script.command`      # edit *nickname*`
-`$ chmod +x os-x-inst-dsk-img-creation-script.command`
-`$ cp "/Applications/Install OS X *nickname*.app" ./`
-`$ ./os-x-inst-dsk-img-creation-script.command`
+
+    $ cd ~/Desktop
+    $ git clone https://github.com/gcch/OS-X-Installation-Disk-Image-Creation-Script.git
+    $ cd OS-X-Installation-Disk-Image-Creation-Script
+    $ vim os-x-inst-dsk-img-creation-script.command
+    $ chmod +x os-x-inst-dsk-img-creation-script.command
+    $ cp "/Applications/Install OS X *nickname*.app" ./
+    $ ./os-x-inst-dsk-img-creation-script.command
+
 
 ## License
 This script is released under the MIT license. See LICENSE.txt.
