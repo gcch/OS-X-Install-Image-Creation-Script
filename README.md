@@ -31,7 +31,7 @@ OS X Terminal:
     $ cd OS-X-Installation-Disk-Image-Creation-Script
     $ vim os-x-inst-dsk-img-creation-script.command
     $ chmod +x os-x-inst-dsk-img-creation-script.command
-    $ cp "/Applications/Install OS X *nickname*.app" ./
+    $ cp "/Applications/Install OS X <nickname>.app" ./
     $ ./os-x-inst-dsk-img-creation-script.command
 
 
