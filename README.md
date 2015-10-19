@@ -23,7 +23,9 @@ Maybe this script can be executed with the below packages:
 5. Execute this script (example: ./os-x-inst-dsk-img-creation-script.command)
 
 ## License
-This script is released under the MIT license.
+This script is released under the MIT license. See LICENSE.txt.
 
 ## Author
-* tag (Twitter: @tag_ism)
+* tag
+** Twitter: @tag_ism
+** Weblog: http://karat5i.blogspot.jp/
