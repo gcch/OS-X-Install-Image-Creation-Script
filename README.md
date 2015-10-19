@@ -26,6 +26,4 @@ Maybe this script can be executed with the below packages:
 This script is released under the MIT license. See LICENSE.txt.
 
 ## Author
-* tag
-** Twitter: @tag_ism
-** Weblog: http://karat5i.blogspot.jp/
+* tag (Twitter: @tag_ism / Blog: http://karat5i.blogspot.jp/)
