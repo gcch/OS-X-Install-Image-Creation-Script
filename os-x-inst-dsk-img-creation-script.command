@@ -138,6 +138,7 @@ hdiutil convert -format UDZO "${work}/${INST_PKG_FILENAME}.sparseimage" -o "${wo
 
 echo ================================================================================
 echo Converting the sparse image to a ISO file...
+#echo スパースイメージを ISO ファイルに変換しています...
 # for OSx86, Hackintosh users
 # 夢を見る際に使用。
 hdiutil convert -format UDTO "${work}/${INST_PKG_FILENAME}.sparseimage" -o "${work}/${INST_PKG_FILENAME}.cdr"
