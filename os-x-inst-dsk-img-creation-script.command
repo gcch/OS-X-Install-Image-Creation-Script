@@ -11,7 +11,7 @@
 # ---------------------------------------------------------------------------------------------------- #
 
 # working directory
-work=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+WORKING_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 echo
 echo "# -------------------------------------------------- #"
@@ -47,7 +47,7 @@ for ((i=7; i<=${OS_X_LATEST_VERSION}; i++)); do
 done
 read VERSION
 INST_PKG_FILENAME="Install ${OS_X[${VERSION}]}"
-if [ -e "${work}/${INST_PKG_FILENAME}.app" ]; then
+if [ -e "${WORKING_DIR}/${INST_PKG_FILENAME}.app" ]; then
 	echo "${INST_PKG_FILENAME}.app is found. It will start the process."
 else
 	echo "${INST_PKG_FILENAME}.app is not found. It will stop the process."
@@ -57,35 +57,35 @@ fi
 echo ================================================================================
 echo Mounting InstallESD.dmg in the OS X installation package...
 #echo インストーラ内の InstallESD.dmg をマウントしています...
-hdiutil attach "${work}/${INST_PKG_FILENAME}.app/Contents/SharedSupport/InstallESD.dmg" -noverify -nobrowse -mountpoint "/Volumes/OS X Install ESD"
+hdiutil attach "${WORKING_DIR}/${INST_PKG_FILENAME}.app/Contents/SharedSupport/InstallESD.dmg" -noverify -nobrowse -mountpoint "/Volumes/OS X Install ESD"
 
 if [ ${VERSION} -ge 7 -a ${VERSION} -le 10 ]; then
 	# OS X Lion ~ OS X Yosemite
 	echo ================================================================================
 	echo Converting BaseSystem.dmg to a sparse image...
 	#echo BaseSystem.dmg をスパースイメージに変換しています...
-	hdiutil convert "/Volumes/OS X Install ESD/BaseSystem.dmg" -format UDSP -o "${work}/${INST_PKG_FILENAME}"
+	hdiutil convert "/Volumes/OS X Install ESD/BaseSystem.dmg" -format UDSP -o "${WORKING_DIR}/${INST_PKG_FILENAME}"
 
 	echo ================================================================================
 	echo Expanding the sparse image size...
 	#echo スパースイメージのサイズを拡張しています...
-	hdiutil resize -size 8g "${work}/${INST_PKG_FILENAME}.sparseimage"
+	hdiutil resize -size 8g "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage"
 
 	echo ================================================================================
 	echo Mounting the sparse image...
 	#echo スパースイメージをマウントしています...
-	hdiutil attach "${work}/${INST_PKG_FILENAME}.sparseimage" -noverify -nobrowse -mountpoint "/Volumes/${INST_PKG_FILENAME}"
+	hdiutil attach "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -noverify -nobrowse -mountpoint "/Volumes/${INST_PKG_FILENAME}"
 else
 	# OS X El Capitan ~
 	echo ================================================================================
 	echo Creating a sparse image...
 	# echo スパースイメージを作成しています...
-	hdiutil create -o "${work}/${INST_PKG_FILENAME}.sparseimage" -size 8g -layout SPUD -fs HFS+J -type SPARSE
+	hdiutil create -o "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -size 8g -layout SPUD -fs HFS+J -type SPARSE
 
 	echo ================================================================================
 	echo Mounting it...
 	# echo 作成したスパースイメージをマウントしてます...
-	hdiutil attach "${work}/${INST_PKG_FILENAME}.sparseimage" -noverify -nobrowse -mountpoint "/Volumes/${INST_PKG_FILENAME}"
+	hdiutil attach "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -noverify -nobrowse -mountpoint "/Volumes/${INST_PKG_FILENAME}"
 
 	echo ================================================================================
 	echo Restoring BaseSystem.dmg to ${INST_PKG_FILENAME}.sparseimage...
@@ -94,7 +94,7 @@ else
 	asr restore -source "/Volumes/OS X Install ESD/BaseSystem.dmg" -target "/Volumes/${INST_PKG_FILENAME}" -noprompt -noverify -erase
 	hdiutil detach "/Volumes/OS X Base System"
 	ls /Volumes
-	hdiutil attach "${work}/${INST_PKG_FILENAME}.sparseimage" -noverify -nobrowse -mountpoint "/Volumes/${INST_PKG_FILENAME}"
+	hdiutil attach "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -noverify -nobrowse -mountpoint "/Volumes/${INST_PKG_FILENAME}"
 	ls /Volumes
 fi
 
@@ -124,30 +124,30 @@ hdiutil detach "/Volumes/${INST_PKG_FILENAME}"
 echo ================================================================================
 echo Compacting the sparse image to eliminate the waste...
 #echo スパースイメージの無駄をなくしています...
-hdiutil compact "${work}/${INST_PKG_FILENAME}.sparseimage" -batteryallowed
+hdiutil compact "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -batteryallowed
 
 echo ================================================================================
 echo Resizing the sparse image...
 #echo スパースイメージのサイズを調整しています...
-hdiutil resize -size `hdiutil resize -limits "${work}/${INST_PKG_FILENAME}.sparseimage" | tail -n 1 | awk '{ print $1 }'`b "${work}/${INST_PKG_FILENAME}.sparseimage"
+hdiutil resize -size `hdiutil resize -limits "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" | tail -n 1 | awk '{ print $1 }'`b "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage"
 
 echo ================================================================================
 echo Converting the sparse image to a DMG file...
 #echo スパースイメージを DMG ファイルに変換しています...
-hdiutil convert -format UDZO "${work}/${INST_PKG_FILENAME}.sparseimage" -o "${work}/${INST_PKG_FILENAME}.dmg"
+hdiutil convert -format UDZO "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -o "${WORKING_DIR}/${INST_PKG_FILENAME}.dmg"
 
 echo ================================================================================
 echo Converting the sparse image to a ISO file...
 #echo スパースイメージを ISO ファイルに変換しています...
 # for OSx86, Hackintosh users
 # 夢を見る際に使用。
-hdiutil convert -format UDTO "${work}/${INST_PKG_FILENAME}.sparseimage" -o "${work}/${INST_PKG_FILENAME}.cdr"
-mv "${work}/${INST_PKG_FILENAME}.cdr" "${work}/${INST_PKG_FILENAME}.iso"
+hdiutil convert -format UDTO "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -o "${WORKING_DIR}/${INST_PKG_FILENAME}.cdr"
+mv "${WORKING_DIR}/${INST_PKG_FILENAME}.cdr" "${WORKING_DIR}/${INST_PKG_FILENAME}.iso"
 
 echo ================================================================================
 echo removing the sparse image...
 #echo スパースイメージを削除しています...
-rm "${work}/${INST_PKG_FILENAME}.sparseimage"
+rm "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage"
 
 echo ================================================================================
 echo operation is end.
