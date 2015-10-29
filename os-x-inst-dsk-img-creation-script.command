@@ -145,10 +145,10 @@ hdiutil convert -format UDTO "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -
 mv "${WORKING_DIR}/${INST_PKG_FILENAME}.cdr" "${WORKING_DIR}/${INST_PKG_FILENAME}.iso"
 
 echo ================================================================================
-echo removing the sparse image...
+echo Removing the sparse image...
 #echo スパースイメージを削除しています...
 rm "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage"
 
 echo ================================================================================
-echo operation is end.
+echo Process is end.
 #echo 終了しました
