@@ -20,7 +20,7 @@ echo "#    OS X Installation Disk Image Creation Script    #"
 echo "#                                                    #"
 echo "# -------------------------------------------------- #"
 echo
-echo Please deploy an installation package (Install OS X <nickname>.app) at the same folder.
+echo "Please deploy an installation package (Install OS X <nickname>.app) at the same folder."
 echo 
 
 # OS X Version Name
