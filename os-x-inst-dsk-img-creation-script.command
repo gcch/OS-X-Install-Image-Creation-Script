@@ -39,10 +39,9 @@ OS_X=\
 	"OS X Yosemite" \
 	"OS X El Capitan" \
 )
-OS_X_LATEST_VERSION=11
 
 echo Select OS X version.
-for ((i=7; i<=${OS_X_LATEST_VERSION}; i++)); do
+for ((i=7; i<=${#OS_X[@]}; i++)); do
 	echo "[${i}] ${OS_X[${i}]}"
 done
 read VERSION
