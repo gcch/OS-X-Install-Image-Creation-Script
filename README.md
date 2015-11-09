@@ -35,7 +35,7 @@ OS X Terminal:
 
 
 ## License
-This script is released under the MIT license. See LICENSE.txt.
+This script is released under the MIT license. See the LICENSE file.
 
 ## Author
 * tag (Twitter: [@tag_ism](https://twitter.com/tag_ism "tag (@tag_ism) | Twitter") / Blog: http://karat5i.blogspot.jp/)
