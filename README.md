@@ -27,8 +27,8 @@ Maybe this script can be executed with the below packages:
 OS X Terminal:
 
     $ cd ~/Desktop
-    $ git clone https://github.com/gcch/OS-X-Installation-Disk-Image-Creation-Script.git
-    $ cd OS-X-Installation-Disk-Image-Creation-Script
+    $ git clone --depth 1 https://github.com/gcch/OS-X-Installation-Disk-Image-Creation-Script.git ./dsk-img-creator
+    $ cd dsk-img-creator
     $ chmod +x os-x-inst-dsk-img-creation-script.command
     $ cp "/Applications/Install OS X <nickname>.app" ./
     $ ./os-x-inst-dsk-img-creation-script.command
