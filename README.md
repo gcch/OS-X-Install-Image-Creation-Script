@@ -22,7 +22,7 @@ Maybe this script can be executed with the below packages:
 4. Execute this script
 5. Select OS X version
 6. Wait for a while
-7. Generate a installation DMG and ISO file (and burn it on a DVD+/-R DL, DVD+/-RW DL, BD-R, or BD-RE blank media with Disk Utility)
+7. Generate installation DMG and ISO files (and burn it on a DVD+/-R DL, DVD+/-RW DL, BD-R, or BD-RE blank media with Disk Utility)
 
 OS X Terminal:
 
