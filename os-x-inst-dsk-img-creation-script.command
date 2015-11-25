@@ -41,7 +41,7 @@ OS_X=\
 )
 
 echo Select OS X version.
-for ((i=7; i<=${#OS_X[@]}; i++)); do
+for ((i=7; i<${#OS_X[@]}; i++)); do
 	echo "[${i}] ${OS_X[${i}]}"
 done
 read VERSION
