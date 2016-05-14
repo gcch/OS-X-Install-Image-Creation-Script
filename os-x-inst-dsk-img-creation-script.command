@@ -47,9 +47,9 @@ done
 read VERSION
 INST_PKG_FILENAME="Install ${OS_X[${VERSION}]}"
 if [ -e "${WORKING_DIR}/${INST_PKG_FILENAME}.app" ]; then
-	echo "${INST_PKG_FILENAME}.app is found. It will start the process."
+	echo "${INST_PKG_FILENAME}.app is found. This process will be started."
 else
-	echo "${INST_PKG_FILENAME}.app is not found. It will stop the process."
+	echo "${INST_PKG_FILENAME}.app is not found. This process will be stopped."
 	exit 1
 fi
 
