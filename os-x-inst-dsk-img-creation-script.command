@@ -4,7 +4,7 @@
 #
 # OS X Installation Disk Image Creation Script
 #
-# Copyright (c) 2015 tag
+# Copyright (c) 2015-2016 tag
 # Released under the MIT license
 # http://opensource.org/licenses/mit-license.php
 #
@@ -38,6 +38,7 @@ OS_X=\
 	"OS X Mavericks" \
 	"OS X Yosemite" \
 	"OS X El Capitan" \
+	"macOS Sierra" \
 )
 
 echo Select OS X version.
