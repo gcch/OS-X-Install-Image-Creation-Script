@@ -18,7 +18,7 @@ Maybe this script can be executed with the below packages:
 
 ## Usage
 1. Deploy this script at any folder
-2. Deploy "Install OS X *nickname*.app" at the same folder
+2. Deploy "Install *os-name*.app" at the same folder
 3. Grant execute permission
 4. Execute this script
 5. Select OS X version
@@ -31,7 +31,7 @@ OS X Terminal:
     $ git clone --depth 1 https://github.com/gcch/OS-X-Installation-Disk-Image-Creation-Script.git ./dsk-img-creator
     $ cd dsk-img-creator
     $ chmod +x os-x-inst-dsk-img-creation-script.command
-    $ cp "/Applications/Install OS X <nickname>.app" ./
+    $ cp "/Applications/Install <os-name>.app" ./
     $ ./os-x-inst-dsk-img-creation-script.command
 
 
