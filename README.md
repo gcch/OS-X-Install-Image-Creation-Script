@@ -38,7 +38,7 @@ OS X Terminal:
 
 ## Verification Environment
 * iMac (21.5-inch, Mid 2011)
-  * Support OS: OS X Lion - macOS High Sierra
+  * Support OS: OS X Lion (10.7) - macOS High Sierra (10.13.6)
 
 ## License
 This script is released under the MIT license. See the LICENSE file.
