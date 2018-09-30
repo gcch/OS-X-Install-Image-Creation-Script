@@ -36,6 +36,9 @@ OS X Terminal:
     $ cp "/Applications/Install <os-name>.app" ./
     $ ./os-x-inst-dsk-img-creation-script.command
 
+## Verification Environment
+* iMac (21.5-inch, Mid 2011)
+ * Support OS: OS X Lion -- macOS High Sierra
 
 ## License
 This script is released under the MIT license. See the LICENSE file.
