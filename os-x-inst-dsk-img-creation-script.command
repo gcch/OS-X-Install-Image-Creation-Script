@@ -40,6 +40,7 @@ OS_X=\
 	"OS X El Capitan" \
 	"macOS Sierra" \
 	"macOS High Sierra" \
+	"macOS Mojave" \
 )
 
 echo Select OS X version.
