@@ -4,7 +4,7 @@
 #
 # OS X Installation Disk Image Creation Script
 #
-# Copyright (c) 2015-2017 tag
+# Copyright (c) 2015-2019 tag
 # Released under the MIT license
 # http://opensource.org/licenses/mit-license.php
 #
@@ -61,8 +61,8 @@ echo Mounting InstallESD.dmg in the OS X installation package...
 #echo インストーラ内の InstallESD.dmg をマウントしています...
 hdiutil attach "${WORKING_DIR}/${INST_PKG_FILENAME}.app/Contents/SharedSupport/InstallESD.dmg" -noverify -nobrowse -mountpoint "/Volumes/OS X Install ESD"
 
+##### OS X Lion -- OS X Yosemite
 if [ ${VERSION} -ge 7 -a ${VERSION} -le 10 ]; then
-	# OS X Lion -- OS X Yosemite
 	echo ================================================================================
 	echo Converting BaseSystem.dmg to a sparse image...
 	#echo BaseSystem.dmg をスパースイメージに変換しています...
@@ -77,8 +77,9 @@ if [ ${VERSION} -ge 7 -a ${VERSION} -le 10 ]; then
 	echo Mounting the sparse image...
 	#echo スパースイメージをマウントしています...
 	hdiutil attach "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -noverify -nobrowse -mountpoint "/Volumes/${INST_PKG_FILENAME}"
+
+##### OS X El Capitan --
 else
-	# OS X El Capitan --
 	echo ================================================================================
 	echo Creating a sparse image...
 	# echo スパースイメージを作成しています...
@@ -93,26 +94,30 @@ else
 	echo Restoring BaseSystem.dmg to ${INST_PKG_FILENAME}.sparseimage...
 	# echo BaseSystem.dmg を作成したスパースイメージにレストアしています...
 	ls /Volumes
+
+	##### macOS Sierra
 	if [ ${VERSION} -le 12 ]; then
-		# macOS Sierra
 		asr restore -source "/Volumes/OS X Install ESD/BaseSystem.dmg" -target "/Volumes/${INST_PKG_FILENAME}" -noprompt -noverify -erase
+
+	##### macOS High Sierra --
 	else
-		# macOS High Sierra --
-		asr restore -source "${WORKING_DIR}/${INST_PKG_FILENAME}.app/Contents/SharedSupport/BaseSystem.dmg" -target "/Volumes/${INST_PKG_FILENAME}" -noprompt -noverify -erase
+		sudo "${WORKING_DIR}/${INST_PKG_FILENAME}.app/Contents/Resources/createinstallmedia" --volume "/Volumes/${INST_PKG_FILENAME}" --nointeraction
 	fi
+
 	hdiutil detach "/Volumes/OS X Base System"
 	ls /Volumes
 	hdiutil attach "${WORKING_DIR}/${INST_PKG_FILENAME}.sparseimage" -noverify -nobrowse -mountpoint "/Volumes/${INST_PKG_FILENAME}"
 	ls /Volumes
 fi
 
-echo ================================================================================
-echo Removeing an alias, Packages, from the sparse image...
-#echo エイリアス Packages を削除しています...
-rm "/Volumes/${INST_PKG_FILENAME}/System/Installation/Packages"
-
+##### OS X Lion -- macOS Sierra
 if [ ${VERSION} -ge 7 -a ${VERSION} -le 12 ]; then
-	# OS X Lion -- macOS Sierra
+
+	echo ================================================================================
+	echo Removeing an alias, Packages, from the sparse image...
+	#echo エイリアス Packages を削除しています...
+	rm "/Volumes/${INST_PKG_FILENAME}/System/Installation/Packages"
+
 	echo ================================================================================
 	echo Copying a folder, Packages, to the sparse image...
 	#echo フォルダ Packages をコピーしています...
@@ -124,18 +129,6 @@ if [ ${VERSION} -ge 7 -a ${VERSION} -le 12 ]; then
 	# OS X Mavericks 以前は要らない？ そもそも OS X Yosemite で必要なのか？
 	cp "/Volumes/OS X Install ESD/BaseSystem.dmg" "/Volumes/${INST_PKG_FILENAME}/"
 	cp "/Volumes/OS X Install ESD/BaseSystem.chunklist" "/Volumes/${INST_PKG_FILENAME}/"
-else
-	# macOS High Sierra --
-	echo ================================================================================
-	echo Copying a folder, Packages, to the sparse image...
-	#echo フォルダ Packages をコピーしています...
-	cp -rp "/Volumes/OS X Install ESD/Packages" "/Volumes/${INST_PKG_FILENAME}/System/Installation/"
-
-	echo ================================================================================
-	echo Copying files, BaseSystem.dmg and BaseSystem.chunklist, to the sparse image...
-	# echo BaseSystem.dmg および BaseSystem.chunklist をコピーしています...
-	cp "${WORKING_DIR}/${INST_PKG_FILENAME}.app/Contents/SharedSupport/BaseSystem.dmg" "/Volumes/${INST_PKG_FILENAME}/"
-	cp "${WORKING_DIR}/${INST_PKG_FILENAME}.app/Contents/SharedSupport/BaseSystem.chunklist" "/Volumes/${INST_PKG_FILENAME}/"	
 fi
 
 echo ================================================================================
