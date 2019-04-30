@@ -101,7 +101,13 @@ else
 
 	##### macOS High Sierra --
 	else
-		sudo "${WORKING_DIR}/${INST_PKG_FILENAME}.app/Contents/Resources/createinstallmedia" --volume "/Volumes/${INST_PKG_FILENAME}" --nointeraction
+		STATUS=1
+		while [ ${STATUS} != 0 ]; do
+			echo Please input your administrator password.
+			#echo 管理者パスワードを入力してください
+			sudo "${WORKING_DIR}/${INST_PKG_FILENAME}.app/Contents/Resources/createinstallmedia" --volume "/Volumes/${INST_PKG_FILENAME}" --nointeraction
+			STATUS=${?}
+		done
 	fi
 
 	hdiutil detach "/Volumes/OS X Base System"
